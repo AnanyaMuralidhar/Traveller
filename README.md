@@ -10,7 +10,7 @@ The Traveller website makes your travel plans comfortable with its creative feat
 ### Back-End :
 1) Ruby On Rails
 2) Ruby Language
-3) SQL 
+3) MySQL 
 ## List of planned features to be implemented :
 ## Resources :
 ### Front-End :
