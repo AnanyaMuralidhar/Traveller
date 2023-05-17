@@ -1,0 +1,47 @@
+<%= form_with(model: trippackage) do |form| %>
+  <% if trippackage.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(trippackage.errors.count, "error") %> prohibited this trippackage from being saved:</h2>
+
+      <ul>
+        <% trippackage.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :package_name, style: "display: block" %>
+    <%= form.text_field :package_name %>
+  </div>
+
+  <div>
+    <%= form.label :destination, style: "display: block" %>
+    <%= form.text_field :destination %>
+  </div>
+
+  <div>
+    <%= form.label :departure, style: "display: block" %>
+    <%= form.datetime_field :departure %>
+  </div>
+
+  <div>
+    <%= form.label :arrival, style: "display: block" %>
+    <%= form.datetime_field :arrival %>
+  </div>
+
+  <div>
+    <%= form.label :budget, style: "display: block" %>
+    <%= form.number_field :budget %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

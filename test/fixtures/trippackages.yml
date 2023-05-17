@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  package_name: MyString
+  destination: MyString
+  departure: 2023-05-17 13:29:37
+  arrival: 2023-05-17 13:29:37
+  description: MyText
+
+two:
+  package_name: MyString
+  destination: MyString
+  departure: 2023-05-17 13:29:37
+  arrival: 2023-05-17 13:29:37
+  description: MyText
