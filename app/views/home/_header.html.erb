@@ -13,15 +13,18 @@
           <%= link_to 'About Us', home_about_path, class:'nav-link' %>
         </li>
         <li class="nav-item">
-          <%= link_to "Admin", rails_admin_path, class:'nav-link'%>
+          <%= link_to "Admin", rails_admin_path(id:current_user.id), class:'nav-link'%>
         </li>
+
         <li class="nav-item">
-          <%= link_to 'LogOut',destroy_user_session_path,method: :delete, id:"log-out", class:'nav-link' %>
+          <%= link_to "My Slots", home_myslots_path(id:current_user.id), class:'nav-link'%>
         </li>
+
         <li>
           <%= link_to "Edit Profile", edit_user_registration_path ,class:'nav-link' %>
         </li>
       </ul>
+                <%= link_to 'LogOut',destroy_user_session_path,method: :delete, id:"log-out", class:'btn btn-danger' %>
     </div>
   </div>
 </nav>

@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_18_124418) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_19_153203) do
+  create_table "companies", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "companyname"
+    t.string "hqlocation"
+    t.integer "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "slots", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.datetime "bookingtime"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "trippackage_id"
+    t.index ["trippackage_id"], name: "index_slots_on_trippackage_id"
+    t.index ["user_id"], name: "index_slots_on_user_id"
+  end
+
   create_table "trippackages", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "package_name"
     t.string "destination"
@@ -20,6 +38,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_18_124418) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "budget"
+    t.string "travelfrom"
+    t.integer "noofbookings"
+    t.string "packcountry"
+    t.bigint "company_id"
+    t.index ["company_id"], name: "index_trippackages_on_company_id"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -37,4 +60,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_18_124418) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "slots", "trippackages"
+  add_foreign_key "slots", "users"
+  add_foreign_key "trippackages", "companies"
 end

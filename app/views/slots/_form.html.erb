@@ -1,0 +1,60 @@
+<%= form_with(model: slot) do |form| %>
+  <% if slot.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(slot.errors.count, "error") %> prohibited this slot from being saved:</h2>
+
+      <ul>
+        <% slot.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label "User email: ", style: "display: block" %>
+    <%# <%= @user.email%>
+  </div>
+  <br/>
+
+  <div>
+    <%= form.label "User name ", style: "display: block" %>
+    <%# <%= @user.name%>
+  </div>
+  <br/>
+
+  <div>
+    <%= form.label "User Contact ", style: "display: block" %>
+    <%# <%= @user.phoneno%>
+  </div>
+  <br/>
+
+
+  <div>
+    <%= form.label "Package Name: ", style: "display: block" %>
+    <%# <%= @package.package_name%>
+  </div>
+  <br/>
+
+  <div>
+    <%= form.label "Package id ", style: "display: block" %>
+    <%# <%= @package.id%>
+  </div>
+  <br/>
+
+  <div>
+    <%= form.label :bookingtime, style: "display: block" %>
+    <%= form.datetime_field :bookingtime %>
+  </div>
+  <br/>
+
+
+  <div>
+    <%= form.submit "Confirm Booking" %>
+  </div>
+  <br/>
+
+  <%= @package.id%>
+  <%= @user.email%>
+
+<% end %>

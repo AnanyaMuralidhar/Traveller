@@ -3,4 +3,8 @@ class HomeController < ApplicationController
   end
   def about
   end
+
+  def myslots
+    @user = User.find(params[:id])
+  end
 end

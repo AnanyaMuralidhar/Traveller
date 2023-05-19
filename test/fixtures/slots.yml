@@ -1,0 +1,7 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bookingtime: 2023-05-19 18:37:54
+
+two:
+  bookingtime: 2023-05-19 18:37:54

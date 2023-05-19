@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :slots
+  resources :companies
   resources :trippackages
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
@@ -7,6 +9,7 @@ Rails.application.routes.draw do
    get 'home/about'
    get 'mainportal/admindashboard'
    get 'mainportal/adminpackage'
+   get 'home/myslots'
   # Defines the root path route ("/")
   # root "home#index"
   devise_scope :user do
