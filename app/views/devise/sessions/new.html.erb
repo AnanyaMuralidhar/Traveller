@@ -3,14 +3,16 @@
 
 <nav class="navbar navbar-expand-lg" style="background-color:	#004d99;" data-bs-theme="dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="#" width="30" height="24" class="d-inline-block align-text-top">
-      Traveller</a>
+      <%= link_to image_tag('suitcase_logo.png',size: "30x30"), class:"d-inline-block align-text-top", width:"30" ,height:"24" %>
+      <!-- <img src="#" width="30" height="24" class="d-inline-block align-text-top"> -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= link_to 'Traveller', root_path, class:'nav-link' %>
+        </li>
         <li class="nav-item">
           <%= link_to 'About Us', home_about_path, class:'nav-link' %>
         </li>

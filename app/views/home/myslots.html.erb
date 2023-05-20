@@ -1,28 +1,22 @@
-<h1 class="myslots-heading">My Slots</h1>
+<h1 class="myslots-heading" style="text-align:center">My Slots</h1>
+<br/>
 
 <% @user.slots.each do |user_slot| %>
-<div class="card">
-  <div class="container">
-    <div class="msleft-child">
-      <span class="heading">Booking id: <%= user_slot.id %> </span>
-    <div class="msmiddle-child">
-      <%= user_slot.trippackage.package_name %>
-      <br/>
-      Destination:
-      <%= user_slot.trippackage.destination %>
-      <br/>
-      <%= user_slot.bookingtime %>
-      <br/>
-
+<div class="container">
+    <div class="card border-dark mb-3 center" style="max-width: 40rem;">
+      <div class="card-header" style="text-align:center">Booking id: <%= user_slot.id %> </div>
+      <div class="card-body" style="text-align:center">
+        <h3 class="card-title"><%= user_slot.trippackage.package_name %></h3>
+        <p class="card-text">Destination:
+        <%= user_slot.trippackage.destination %>
+        <br/>
+        <%= user_slot.bookingtime %></p>
+      </div>
     </div>
-    <div class="msright-child">
     </div>
-  </div>
-</div>
-</div>
 <br/>
 <% end %>
 
 <div>
-  <%= link_to "Back", home_index_path %>
+  <%= link_to "Back", home_index_path, class:'btn btn-primary'%>
 </div>
