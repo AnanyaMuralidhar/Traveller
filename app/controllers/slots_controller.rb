@@ -24,6 +24,7 @@ class SlotsController < ApplicationController
   # POST /slots or /slots.json
   def create
     @slot = Slot.new(slot_params)
+    @slot.user = current_user 
 
     respond_to do |format|
       if @slot.save
@@ -67,6 +68,6 @@ class SlotsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def slot_params
-      params.require(:slot).permit(:bookingtime, :user_id, :trippackage_id, references: [])
+      params.require(:slot).permit(:bookingtime,:user_id, :user_name, :trippackage_id, references: [])
     end
 end

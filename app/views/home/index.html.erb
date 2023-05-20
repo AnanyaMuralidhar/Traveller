@@ -1,11 +1,48 @@
 <%= render 'home/header' %>
-<h1 style="text-align:center">Home#index</h1>
-<p style="text-align:center">Homepage</p>
 
-<div class="container" >
-    <h3 style="text-align:center">Ready to book your trip?</h3>
+<br/><br/>
+
+<div class="card mb-3">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h3 class="card-title" style="text-align:center">Ready to book your trip?</h3>
+    <div class="container text-center">
+  <div class="row row-cols-4">
+    <div class="col">
+      <div class="btn-group">
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    From
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Mysore</a></li>
+    <li><a class="dropdown-item" href="#">Bangalore</a></li>
+    <li><a class="dropdown-item" href="#">Chennai</a></li>
+    <li><a class="dropdown-item" href="#">Delhi</a></li>
+    <li><a class="dropdown-item" href="#">Mumbai</a></li>
+  </ul>
 </div>
-
+    </div>
+    <div class="col">
+      <div class="btn-group">
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    To
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Mysore</a></li>
+    <li><a class="dropdown-item" href="#">Bangalore</a></li>
+    <li><a class="dropdown-item" href="#">Chennai</a></li>
+    <li><a class="dropdown-item" href="#">Delhi</a></li>
+    <li><a class="dropdown-item" href="#">Mumbai</a></li>
+  </ul>
+</div>
+</div>
+    <div class="col">Departure</div>
+    <div class="col">Return</div>
+  </div>
+  <button type="button" class="btn btn-outline-success">Search</button>
+</div>
+    </div>
+</div>
 
 
 <div class="container">
@@ -23,7 +60,7 @@
     <p class="card-text"><small class="text-body-secondary"><%=package.departure %> to <%=package.arrival%></small></p>
   </div>
     <%# <%=package.id%>
-    <%= link_to 'Book Package', new_slot_path(id:package.id, user_id:current_user.id) , class:'btn btn-success' %>
+    <%= link_to 'Book Package', new_slot_path(userid:current_user.id, id:package.id) , class:'btn btn-success' %>
 </div>
 </div>
 <%end%>
@@ -31,11 +68,11 @@
 </div>
 <br/>
 <br/>
-  <h2>FAQs</h2>
+  <h2 style="text-align:center">FAQs</h2>
 <div class="container">
   <p>
-  <a class="btn btn-info dropdown-toggle" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">
-    What does a typical travel package include?
+  <a class="btn btn btn-outline-dark dropdown-toggle" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">
+    <b>What does a typical travel package include?</b>
   </a>
 </p>
 <div class="collapse" id="collapseExample1">
@@ -46,8 +83,8 @@
 </div>
 
 <p>
-<a class="btn btn-info dropdown-toggle" data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
-  Can I customize my travel package?
+<a class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
+  <b>Can I customize my travel package?</b>
 </a>
 </p>
 <div class="collapse" id="collapseExample2">
@@ -58,8 +95,8 @@
 </div>
 
 <p>
-<a class="btn btn-info dropdown-toggle" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
-  What is the cancellation and refund policy for travel packages?
+<a class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
+  <b>What is the cancellation and refund policy for travel packages?</b>
 </a>
 </p>
 <div class="collapse" id="collapseExample3">
@@ -70,8 +107,8 @@
 </div>
 
 <p>
-<a class="btn btn-info dropdown-toggle" data-bs-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample4">
-  How do I receive my travel documents and itinerary?
+<a class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample4">
+  <b>How do I receive my travel documents and itinerary?</b>
 </a>
 </p>
 <div class="collapse" id="collapseExample4">
@@ -82,8 +119,8 @@
 </div>
 
 <p>
-<a class="btn btn-info dropdown-toggle" data-bs-toggle="collapse" href="#collapseExample5" role="button" aria-expanded="false" aria-controls="collapseExample5">
-  What happens if there are changes or disruptions to my travel plans?
+<a class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="collapse" href="#collapseExample5" role="button" aria-expanded="false" aria-controls="collapseExample5">
+  <b>What happens if there are changes or disruptions to my travel plans?</b>
 </a>
 </p>
 <div class="collapse" id="collapseExample5">
