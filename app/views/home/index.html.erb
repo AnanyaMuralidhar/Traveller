@@ -1,17 +1,66 @@
 <%= render 'home/header' %>
 
 <br/><br/>
+<%# <%= link_to image_tag('login_backg1.jpg'), class:"card-img-top" %>
 
+<!--Start of Searchbar box-->
 <div class="card mb-3">
-  <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
+
+    <!--Carousel-->
+
+    <div id="carouselExampleCaptions" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <%= link_to image_tag('login_backg1.jpg'), class:"card-img-top" %>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <%= link_to image_tag('login_backg1.jpg'), class:"card-img-top" %>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <<%= link_to image_tag('login_backg1.jpg'), class:"card-img-top" %>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+    <!--Carousel ends-->
+    <br/>
     <h3 class="card-title" style="text-align:center">Ready to book your trip?</h3>
+    <br/>
     <div class="container text-center">
   <div class="row row-cols-4">
     <div class="col">
       <div class="btn-group">
-  <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    From
+<button type="button" class="btn btn-secondary">
+  From
+</button>
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="background-color:	#004d99;" data-bs-theme="dark">
+    Select Location
   </button>
   <ul class="dropdown-menu">
     <li><a class="dropdown-item" href="#">Mysore</a></li>
@@ -24,9 +73,12 @@
     </div>
     <div class="col">
       <div class="btn-group">
-  <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    To
-  </button>
+        <button type="button" class="btn btn-secondary">
+          To
+        </button>
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="background-color:	#004d99;" data-bs-theme="dark">
+            Select Location
+          </button>
   <ul class="dropdown-menu">
     <li><a class="dropdown-item" href="#">Mysore</a></li>
     <li><a class="dropdown-item" href="#">Bangalore</a></li>
@@ -45,6 +97,8 @@
 </div>
 
 
+<!-- End of Searchbar box -->
+
 <div class="container">
   <h2 class="packages">Packages</h2>
   <br/>
@@ -52,7 +106,7 @@
   <% Trippackage.all.each do |package|%>
   <div class="col">
 <div class="card">
-  <img src="..." class="card-img-top" alt="...">
+  <%= link_to image_tag('mys.jpg'), class:"card-img-top-right"%>
   <div class="card-body">
     <h5 class="card-title" style="text-align:center"><%=package.package_name%></h5>
     <p class="card-text"><%=package.description%></p>
@@ -60,7 +114,7 @@
     <p class="card-text"><small class="text-body-secondary"><%=package.departure %> to <%=package.arrival%></small></p>
   </div>
     <%# <%=package.id%>
-    <%= link_to 'Book Package', new_slot_path(userid:current_user.id, id:package.id) , class:'btn btn-success' %>
+    <%= link_to 'Book Package', new_slot_path(user_id:current_user.id, id:package.id) , class:'btn btn-success' %>
 </div>
 </div>
 <%end%>

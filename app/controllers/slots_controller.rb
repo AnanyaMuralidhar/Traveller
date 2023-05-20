@@ -24,7 +24,7 @@ class SlotsController < ApplicationController
   # POST /slots or /slots.json
   def create
     @slot = Slot.new(slot_params)
-    @slot.user = current_user 
+    @slot.user = current_user
 
     respond_to do |format|
       if @slot.save
