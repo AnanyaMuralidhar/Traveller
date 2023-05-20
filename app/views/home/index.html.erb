@@ -121,7 +121,7 @@
     <p class="card-text"><small class="text-body-secondary"><%=package.departure %> to <%=package.arrival%></small></p>
   </div>
     <%# <%=package.id%>
-    <%= link_to 'Book Package', new_slot_path(user_id:current_user.id, id:package.id) , class:'btn btn-success' %>
+    <%= link_to 'Book Package', new_slot_path(user_id:current_user.id, id:package.id) , class:'btn btn-success',  style:"background-color:#004d99;" %>
 </div>
 </div>
 <%end%>
