@@ -13,32 +13,31 @@
 
   <div>
     <%= form.label "User email: ", style: "display: block" %>
-    <%# <%= @user.email%>
+    <%= current_user.email%>
   </div>
   <br/>
 
   <div>
-    <%= form.label "User name ", style: "display: block" %>
-    <%# <%= @user.name%>
+    <%= form.label "User name ", style: "display: block"%>
+    <%= current_user.name%>
   </div>
   <br/>
 
   <div>
     <%= form.label "User Contact ", style: "display: block" %>
-    <%# <%= @user.phoneno%>
+    <%= current_user.phoneno%>
   </div>
   <br/>
 
-
   <div>
     <%= form.label "Package Name: ", style: "display: block" %>
-    <%# <%= @package.package_name%>
+    <%= @current_trippackage.package_name%>
   </div>
   <br/>
 
   <div>
     <%= form.label "Package id ", style: "display: block" %>
-    <%# <%= @package.id%>
+    <%= @current_trippackage.id%>
   </div>
   <br/>
 
@@ -55,8 +54,5 @@
     <%= form.submit "Confirm Booking" %>
   </div>
   <br/>
-
-  <%# <%= @package.id%>
-  <%# <%= @user.email%>
 
 <% end %>
