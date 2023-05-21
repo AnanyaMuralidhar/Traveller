@@ -1,10 +1,12 @@
 <h1 class="myslots-heading" style="text-align:center">My Slots</h1>
-<br/>
-
+<br/><br/>
+<div class="row row-cols-1 row-cols-md-2 g-4">
 <% @user.slots.each do |user_slot| %>
-<div class="container">
+<div class="container" >
+
+    <div class="col">
     <div class="card border-dark mb-3 center" style="max-width: 40rem;">
-      <div class="card-header" style="text-align:center">Booking id: <%= user_slot.id %> </div>
+      <div class="card-header" style="text-align:center; background-color:	#004d99; color: #FFFFFF" >Booking id: <%= user_slot.id %> </div>
       <div class="card-body" style="text-align:center">
         <h3 class="card-title"><%= user_slot.trippackage.package_name %></h3>
         <p class="card-text">Destination:
@@ -12,10 +14,13 @@
         <br/>
         <%= user_slot.bookingtime %></p>
       </div>
+      </div>
     </div>
     </div>
+
 <br/>
 <% end %>
+</div>
 
 <div>
   <%= link_to "Back", home_index_path, class:'btn btn-primary'%>

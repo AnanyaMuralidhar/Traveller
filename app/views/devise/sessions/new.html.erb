@@ -22,7 +22,7 @@
 </nav>
 
 <div class="signup">
-  <div class="signup-connect">
+  <div class="signup-connect" style="background-color:#004d99;">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <h1><center>Log In</center></h1>
     <a href="#" class="btn btn-social btn-facebook"><i class="fa fa-facebook"></i> Sign in with Facebook</a>
@@ -41,8 +41,9 @@
         <%= f.label :password %><br />
         <%= f.password_field :password, autocomplete: "current-password" %>
       </fieldset>
-
           <%= f.submit "Log in" ,class:"btn btn-primary" %>
+              <span><b>Don't Have an Account?</b></span>
+                  <%= link_to "Sign up", new_registration_path(resource_name), class:'btn btn-primary' %>
     </form>
   </div>
 </div>
