@@ -70,8 +70,8 @@ class SlotsController < ApplicationController
     end
 
     def set_current_trippackage
-  @current_trippackage = Trippackage.find_by(id: session[:current_trippackage_id])
-end
+      @current_trippackage = Trippackage.find_by(id: session[:current_trippackage_id])
+    end
 
     # Only allow a list of trusted parameters through.
     def slot_params
