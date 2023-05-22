@@ -13,6 +13,7 @@
         <%= user_slot.trippackage.destination %>
         <br/>
         <%= user_slot.bookingtime %></p>
+        <%= link_to "Fill a feedback", new_feedback_path(user_id:current_user.id, id:user_slot.trippackage.company.id), class:'btn btn-success'%>
       </div>
       </div>
     </div>

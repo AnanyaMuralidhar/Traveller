@@ -1,0 +1,10 @@
+<div style="text-align:center">
+<h1>New feedback</h1>
+
+<%= render "form", feedback: @feedback %>
+
+<br>
+<div>
+  <%= link_to "Back", home_myslots_path(id:current_user.id), class:'btn btn-primary'%>
+</div>
+</div>

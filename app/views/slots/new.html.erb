@@ -1,10 +1,14 @@
-<h1 style="text-align:center">New Booking</h1>
-<div style="text-align:center">
+<div style="background-color:	#004d99; color: #FFFFFF">
+  <h1 style="text-align:center">New Booking</h1>
+  </div>
+
+<div class="col d-flex justify-content-center">
+<div class="card border-dark mb-3 center" style="text-align:center;  justify-content: center; width: 40rem; font-family:Georgia">
 <%= render "form", slot: @slot %>
 </div>
 <br>
-
+</div>
 
 <div>
-  <%= link_to "Back", home_index_path %>
+  <%= link_to "Back", home_index_path , class:"btn btn-primary"%>
 </div>
